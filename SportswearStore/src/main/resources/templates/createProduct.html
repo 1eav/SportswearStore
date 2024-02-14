@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Store - Create Product</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<header>
+    <div class="block1">
+        <nav>
+            <a href="/" class="text1">Sportswear Store&nbsp;&nbsp;&nbsp;</a>
+            <a href="/" class="text2">HOME</a>
+            <a href="/product" class="text2">ORDER</a>
+            <a href="/admin" class="text2">ADMIN</a>
+            <a href="/user" class="text2">USER</a>
+            <a href="/image"><img class="button2" align="right" th:src="@{'/css/images/icon_buy.png'}" alt="icon buy" width="40px" height="40px"></a>
+        </nav>
+    </div>
+</header>
+<body>
+<h1 align="center" class="text3">S P R I N G</h1>
+<hr>
+<div align="center">
+    <br>
+    <table>
+        <h2 class="text2"><b>C R E A T E&nbsp;&nbsp;&nbsp;N E W&nbsp;&nbsp;&nbsp;O R D E R</b></h2>
+        <form action="/product/createProduct" method="post" th:object="${product}">
+            <label class="block3" for="Category">Category:</label>
+            <br>
+            <input class="block3" type="text" id="Category" name="Category" th:field="*{category}" required>
+            <br>
+            <label class="block3" for="Name">Name:</label>
+            <br>
+            <input class="block3" type="text" id="Name" name="Name" th:field="*{name}" required>
+            <br>
+            <label class="block3" for="Brand">Brand:</label>
+            <br>
+            <input class="block3" type="text" id="Brand" name="Brand" th:field="*{brand}" required>
+            <br>
+            <label class="block3" for="Descriptions">Descriptions:</label>
+            <br>
+            <textarea class="block3" id="Descriptions" name="Descriptions" th:field="*{descriptions}" placeholder="Введите описание" cols="90" rows="10"></textarea>
+            <br>
+            <label class="block3" for="Price">Price:</label>
+            <br>
+            <input class="block3" type="text" id="Price" name="Price" th:field="*{price}" required>
+            <br>
+            <label class="block3" for="Size">Size:</label>
+            <br>
+            <input class="block3" type="text" id="Size" name="Size" th:field="*{size}" required>
+            <br>
+            <label class="block3" for="Color">Color:</label>
+            <br>
+            <input class="block3" type="text" id="Color" name="Color" th:field="*{color}" required>
+            <br>
+            <button class="button1" type="submit">Create Product</button>
+            <a class="button1" href="/product">Back</a>
+        </form>
+    </table>
+</div>
+<hr>
+<br>
+<br>
+<br>
+<br>
+</body>
+<footer align="center" class="block2"><b>&copy; 2024 Efimov Alexander. All rights reserved.</b></footer>
+</html>

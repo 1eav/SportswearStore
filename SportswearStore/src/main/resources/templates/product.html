@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Store - Product</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<header>
+    <div class="block1">
+        <nav>
+            <a href="/" class="text1">Sportswear Store&nbsp;&nbsp;&nbsp;</a>
+            <a href="/" class="text2">HOME</a>
+            <a href="/product" class="text2">ORDER</a>
+            <a href="/admin" class="text2">ADMIN</a>
+            <a href="/user" class="text2">USER</a>
+            <a href="/image"><img class="button2" align="right" th:src="@{'/css/images/icon_buy.png'}" alt="icon buy" width="40px" height="40px"></a>
+        </nav>
+    </div>
+</header>
+<body>
+<h1 align="center" class="text3">S P R I N G</h1>
+<hr>
+<div align="center">
+    <br>
+    <div>
+        <form th:action="@{/product}">
+            <input class="block3" type="text" name="keyword">
+            <input class="button1" type="submit" value="Search">
+        </form>
+    </div>
+    <br>
+    <table>
+        <caption class="text2"><b>O R D E R</b></caption>
+        <tr>
+            <th class="block4">ID</th>
+            <th class="block4">NAME</th>
+            <th class="block4">CATEGORY</th>
+            <th class="block4">BRAND</th>
+            <th class="block4">PRICE</th>
+            <th class="block4">SIZE</th>
+            <th class="block4">COLOR</th>
+            <th class="block4">DESCRIPTIONS</th>
+            <th class="block4"> </th>
+            <th class="block4"> </th>
+        </tr>
+        <tr th:each="products : ${product}">
+            <td class="text3" th:text="${products.id}"></td>
+            <td class="text3" th:text="${products.name}"></td>
+            <td class="text3" th:text="${products.category}"></td>
+            <td class="text3" th:text="${products.brand}"></td>
+            <td class="text3" th:text="${products.price}"></td>
+            <td class="text3" th:text="${products.size}"></td>
+            <td class="text3" th:text="${products.color}"></td>
+            <td class="text3" th:text="${products.descriptions}"></td>
+            <td class="button3"><a th:href="@{/product/editProduct/{id}(id=${products.id})}">Edit</a></td>
+            <td class="button3"><a th:href="@{/product/deleteProduct/{id}(id=${products.id})}">Delete</a></td>
+        </tr>
+    </table>
+</div>
+<hr>
+<br>
+<br>
+<br>
+<br>
+</body>
+<footer align="center" class="block2"><b>&copy; 2024 Efimov Alexander. All rights reserved.</b></footer>
+</html>

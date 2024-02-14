@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Store - Home</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<header>
+    <div class="block1">
+        <nav>
+            <a href="/" class="text1">Sportswear Store&nbsp;&nbsp;&nbsp;</a>
+            <a href="/" class="text2">HOME</a>
+            <a href="/product" class="text2">ORDER</a>
+            <a href="/admin" class="text2">ADMIN</a>
+            <a href="/user" class="text2">USER</a>
+            <a href="/image"><img class="button2" align="right" th:src="@{'/css/images/icon_buy.png'}" alt="icon buy" width="40px" height="40px"></a>
+        </nav>
+    </div>
+</header>
+<body>
+<h1 align="center" class="text3">S P R I N G</h1>
+<hr>
+<div align="center">
+    <br>
+    <table>
+        <caption class="text2"><b>C R E A T E&nbsp;&nbsp;&nbsp;N E W</b></caption>
+        <tr>
+            <th class="text3"><a href="/admin/createAdmin">NEW ADMIN</a></th>
+            <th class="text3"><a href="/user/createUser">NEW USER</a></th>
+            <th class="text3"><a href="/product/createProduct">NEW PRODUCT</a></th>
+        </tr>
+    </table>
+</div>
+<hr>
+<br>
+<div align="center">
+    <br>
+    <br>
+    <br>
+    <br>
+    <img th:src="@{'/css/images/image_order_1.png'}" alt="head image" width="200px" height="200px">
+    <img th:src="@{'/css/images/image_order_2.png'}" alt="head image" width="200px" height="200px">
+    <img th:src="@{'/css/images/image_order_3.png'}" alt="head image" width="200px" height="200px">
+    <img th:src="@{'/css/images/image_order_4.png'}" alt="head image" width="200px" height="200px">
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+<footer align="center" class="block2"><b>&copy; 2024 Efimov Alexander. All rights reserved.</b></footer>
+</html>
